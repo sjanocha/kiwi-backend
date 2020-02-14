@@ -4,10 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.studia.android.skyscanner.backend.kiwi.model.Flights;
 import pl.studia.android.skyscanner.backend.kiwi.model.PostAttr;
 import pl.studia.android.skyscanner.backend.kiwi.model.PostQuery;
@@ -87,5 +84,12 @@ public class FlightRestController {
             }
         }
         return returnResponse;
+    }
+
+
+    @RequestMapping("/")
+    @ResponseBody
+    String home() {
+        return "Hello World!";
     }
 }
